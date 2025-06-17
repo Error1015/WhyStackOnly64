@@ -10,7 +10,6 @@ public class Config {
     public static final ModConfigSpec.IntValue size = BUILDER.defineInRange("size", 64, 1, 99);
 
     public static final ModConfigSpec.BooleanValue potions = BUILDER.define("potions", false);
-    public static final ModConfigSpec.BooleanValue buckets = BUILDER.define("buckets", false);
     public static final ModConfigSpec.BooleanValue food = BUILDER.define("food", false);
 
     static {

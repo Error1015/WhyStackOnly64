@@ -39,13 +39,12 @@ public class Wso16reborn {
         boolean maxSizeNoOne = maxSize != null && maxSize != 1;
         boolean isFood = Config.food.get() && stack.getFoodProperties(null) != null;
         boolean isPotion = Config.potions.get() && item instanceof PotionItem;
-        boolean isBucket = Config.buckets.get() && item instanceof BucketItem;
 
         if (item instanceof TieredItem) {
             return false;
         }
 
-        return maxSizeNoOne || isFood || isPotion || isBucket;
+        return maxSizeNoOne || isFood || isPotion;
     }
 
     private boolean match16(Item item) {
