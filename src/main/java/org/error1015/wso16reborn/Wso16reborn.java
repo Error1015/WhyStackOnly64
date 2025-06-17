@@ -26,12 +26,6 @@ public class Wso16reborn {
         }
     }
 
-    /**
-     * 最大堆叠不为1
-     * 是食物且最大堆叠为1
-     * 是药水
-     * 是桶
-     */
     private boolean matchAll(Item item) {
         var stack = item.getDefaultInstance();
         var maxSize = item.components().get(DataComponents.MAX_STACK_SIZE);
@@ -39,10 +33,6 @@ public class Wso16reborn {
         boolean maxSizeNoOne = maxSize != null && maxSize != 1;
         boolean isFood = Config.food.get() && stack.getFoodProperties(null) != null;
         boolean isPotion = Config.potions.get() && item instanceof PotionItem;
-
-        if (item instanceof TieredItem) {
-            return false;
-        }
 
         return maxSizeNoOne || isFood || isPotion;
     }
